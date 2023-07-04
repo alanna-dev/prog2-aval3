@@ -6,3 +6,8 @@ void main() {
   print(dna.invertedSequence(dna.sequence));
   print(DNASequence.complement(dna.sequence));
 }
+
+/*autores:
+Alanna Gilcielle Mesquita de Farias
+Francisco Ronny Ribeiro da Silva
+*/
