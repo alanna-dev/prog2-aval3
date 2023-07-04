@@ -1,3 +1,5 @@
+// ignore_for_file: unused_local_variable
+
 import 'dart:math';
 
 class DNASequence {
@@ -34,16 +36,24 @@ class DNASequence {
     List listOfComplementSequence = [];
     String complementNucleotides = '';
     int sequenceLenght = sequence.length;
+    int t = 0;
+    int a = 0;
+    int g = 0;
+    int c = 0;
     for (int i = 0; i < sequenceLenght; i++) {
       // 'A', 'C', 'G', 'T'
       if (sequence[i] == 'A') {
         complementNucleotides = 'T';
+        t++;
       } else if (sequence[i] == 'T') {
         complementNucleotides = 'A';
+        t++;
       } else if (sequence[i] == 'C') {
         complementNucleotides = 'G';
+        c++;
       } else if (sequence[i] == 'G') {
         complementNucleotides = 'C';
+        g++;
       }
       listOfComplementSequence.add(complementNucleotides);
     }
@@ -51,22 +61,26 @@ class DNASequence {
     return DNASequence(complementSequence);
   }
 
+  String invertedSequence(String txt) => txt.split('').reversed.join();
+
   nucleotidesOccurrences(sequence) {
     int sequenceLenght = sequence.length;
+    int t = 0;
+    int a = 0;
+    int g = 0;
+    int c = 0;
     for (int i = 0; i < sequenceLenght; i++) {
       // 'A', 'C', 'G', 'T'
       if (sequence[i] == 'A') {
-        complementNucleotides = 'T';
+        a++;
       } else if (sequence[i] == 'T') {
-        complementNucleotides = 'A';
+        t++;
       } else if (sequence[i] == 'C') {
-        complementNucleotides = 'G';
+        c++;
       } else if (sequence[i] == 'G') {
-        complementNucleotides = 'C';
+        g++;
       }
-      listOfComplementSequence.add(complementNucleotides);
     }
+    print('Ocorrencias: A= $a vezes, T= $t vezes, G= $g vezes,C= $c vezes');
   }
-
-  String invertedSequence(String txt) => txt.split('').reversed.join();
 }
